@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+:root {
+  --color-bg: #111;
+  --color-neon-cyan: #171717;
+  --color-neon-purple: #8d8e8f;
+  --color-neon-red: #897f81;
+}
+
+body {
+  font-family: 'Orbitron', Arial, sans-serif;
+  background: var(--color-bg);
+  color: white;
+  display: flex;
+  justify-content: right;
+  height: 100vh;
+  margin: 0;
+}
+
+.logo-nfs {
+  text-align: center;
+  
+
+}
+.titulo{
+    height: 170px;
+    margin-right: 100px;
+    border-radius: 100px;
+}
+
+
+.video-container {
+  position: fixed; /* Mantiene el video en una posición fija */
+  right: 0;
+  bottom: 0;
+  min-width: 99%;
+  min-height: 100%;
+  z-index: -1; /* Envía el video al fondo de la página */
+  overflow: hidden;
+  height: 10%;
+}
+
+video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute; /* Para centrar el video */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra el video */
+}
+.mensaje{
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    margin-top: 30%;
+    margin-right: 100px;
+    
+}
+
+ .pantalla-completa{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    z-index: 1000;
+   
+     /* Asegura que esté por encima de otros elementos */
+}
+
+.video-2 {
+ 
+  display: inline-block;
+}
+
+.video-2 video {
+  width: 100%;
+  display: block;
+}
+
+.menus {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(20, 20, 30, 0.5);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 40px 10px var(--color-neon-cyan);
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  z-index: 2;
+  border-top: 2px solid var(--color-neon-purple);
+}
+
+.menus button {
+  margin: 0 12px;
+  padding: 14px 28px;
+  background: linear-gradient(90deg, var(--color-neon-cyan), var(--color-neon-purple));
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-size: 18px;
+  box-shadow: 0 0 12px var(--color-neon-cyan), 0 0 24px var(--color-neon-purple);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: neon-flicker 2s infinite alternate;
+}
+.menus button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 24px var(--color-neon-red), 0 0 48px var(--color-neon-cyan);
+}
+
+@keyframes neon-flicker {
+  0%, 100% { box-shadow: 0 0 12px var(--color-neon-cyan), 0 0 24px var(--color-neon-purple); }
+  50% { box-shadow: 0 0 24px var(--color-neon-red), 0 0 48px var(--color-neon-cyan); }
+}
+
+
+
+
+/* vehiculos */
+
+
+
+body {
+    background: #111;
+    font-family: 'Orbitron', Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px;
+    padding: 40px;
+}
+
+.car-card {
+    background: rgba(20, 20, 30, 0.7);
+    border-radius: 18px;
+    box-shadow: 0 0 32px 8px #00fff7, 0 0 8px 2px #a259ff;
+    border: 2px solid #a259ff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    backdrop-filter: blur(4px);
+}
+
+.car-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 48px 16px #ff3860, 0 0 16px 4px #00fff7;
+    border-color: #ff3860;
+}
+
+.car-img {
+    width: 250px;
+    height: 120px;
+    object-fit: cover;
+    border-bottom: 2px solid #00fff7;
+}
+
+.car-title {
+    color: #fff;
+    font-size: 1.3rem;
+    margin: 18px 0 10px 0;
+    text-shadow: 0 0 8px #00fff7, 0 0 4px #a259ff;
+    text-align: center;
+}
+
+.car-desc {
+    color: #ccc;
+    font-size: 1rem;
+    padding: 0 16px 18px 16px;
+    text-align: center;
+}
+
+.car-stats {
+    margin-top: 8px;
+    font-size: 2rem;
+    color: #00fff7;
+    text-align: center;
+    width: 94%;
+    background: rgba(20,20,30,0.5);
+    border-radius: 8px;
+    padding: 2px 10px;
+    box-shadow: 0 0 8px #00fff7;
+}
+
+.car-stats div {
+    display: flex;
+    justify-content: space-between;
+    margin: 2px 0;
+}
+
+.car-stats span {
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 0 4px #a259ff;
+}
+
+
+.titulo-vehiculo {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #112d2c;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+  text-shadow: 0 0 16px #444444, 0 0 8px #a259ff;
+  width: 100%;
+  margin: 0;
+  z-index: 10;
+}
+
+.vehiculos2-bg {
+  background: #111 url('img/garaje.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+
+.btn-seleccionar {
+  background: linear-gradient(90deg, var(--color-neon-cyan), var(--color-neon-purple));
+   color: #fff;
+ margin-right: 40px;
+  padding: 24px 28px ; 
+  border: none;
+  border-radius: 20px;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-size: 28px;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 12px var(--color-neon-cyan), 0 0 24px var(--color-neon-purple);
+}
+
+.btn-seleccionar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 24px var(--color-neon-red), 0 0 48px var(--color-neon-cyan);
+}
+
+.seleccionar-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  z-index: 20;
+}
+
+
+
