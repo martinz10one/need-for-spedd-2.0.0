@@ -53,15 +53,13 @@ video {
     font-family: 'Arial', sans-serif;
     font-size: 24px;
     color: white;
-    text-align: center;
-    justify-content:right ;
-    margin-right: 100px;
+  
+    justify-content:center ;
+   
     text-decoration: none;
     position: absolute;
-     border-radius: 20px;
-
-    left: 70%;
-    top: 75%;
+   border-radius: 20px;
+    top: 88%;
    
 
    
@@ -450,4 +448,83 @@ body {
 @keyframes glow-pulse {
     0% { box-shadow: 0 0 8px #4e6ccf, 0 0 16px #00fff7; }
     100% { box-shadow: 0 0 32px #00fff7, 0 0 48px #4e6ccf; }
+}
+
+
+
+/* modos de juego */
+
+
+
+body {
+  background: url('img/garaje.png') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+.contenedor-tarjetas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  min-height: 100vh;
+}
+.tarjeta {
+  background: rgba(83, 81, 81, 0.85);
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  width: 300px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+.tarjeta:hover {
+  transform: scale(1.05);
+}
+.modo-rapido {
+  border-top: 6px solid #003cff;
+}
+.modo-carrera {
+  border-top: 6px solid #ffffff;
+}
+.modo-multijugador {
+  border-top: 6px solid #ff0000;
+}
+.tarjeta h2 {
+  margin-top: 0;
+}
+.tarjeta button {
+  margin-top: 18px;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.tarjeta button:hover {
+  background: #444;
+}
+
+@keyframes neon-pulse {
+  0% {
+    box-shadow: 0 0 16px 4px #00fff7, 0 0 8px 2px #a259ff;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 48px 16px #ff3860, 0 0 24px 8px #00fff7;
+    transform: scale(1.04);
+  }
+  100% {
+    box-shadow: 0 0 16px 4px #00fff7, 0 0 8px 2px #a259ff;
+    transform: scale(1);
+  }
+}
+
+.tarjeta {
+  /* ...tus estilos existentes... */
+  animation: neon-pulse 2s infinite;
 }
