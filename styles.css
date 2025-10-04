@@ -32,7 +32,7 @@ body {
   position: fixed; /* Mantiene el video en una posición fija */
   right: 0;
   bottom: 0;
-  min-width: 99%;
+  min-width: 100%;
   min-height: 100%;
   z-index: -1; /* Envía el video al fondo de la página */
   overflow: hidden;
@@ -269,16 +269,14 @@ body {
 .btn-seleccionar {
   background: linear-gradient(90deg, var(--color-neon-cyan), var(--color-neon-purple));
    color: #fff;
-   margin:15px 50px 50px 70px;
-   position: absolute;
    align-items: center;
    justify-content: center;
-   
-  
   border: none;
   border-radius: 20px;
   font-family: 'Orbitron', Arial, sans-serif;
-  font-size: 18px;
+  font-size: 20px;
+  height: 30px;
+  top: 50px;
   text-decoration: none;
   display: inline-block;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -295,7 +293,7 @@ body {
   justify-content: center;
   position: absolute;
   bottom: 40px;
-  left: 0;
+  
   z-index: 20;
 }
 
@@ -422,18 +420,15 @@ body {
     font-family: 'Orbitron', Arial, sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 2px;
     cursor: pointer;
-    letter-spacing: 1px;
+    
     outline: none;
     display: inline-block;
-    position: relative;
     z-index: 1;
     background: linear-gradient(90deg, #4e6ccf 0%, #1e1d1e 100%);
     color: #d9d9d9;
     
-    overflow: hidden;
+ 
 }
 
   
