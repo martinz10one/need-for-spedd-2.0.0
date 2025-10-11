@@ -523,12 +523,10 @@ body {
   /* ...tus estilos existentes... */
   animation: neon-pulse 2s infinite;
 }
-/* Estilos generales para el fondo negro del juego */
-/* Estilos generales para el fondo negro del juego */
+
 body {
   
-    /* Estilos base: Fondo negro, dimensiones completas */
-    /* Fondo negro sólido para el cuerpo */
+ */
     color: #ffffff;
     font-family: 'Arial', sans-serif;
     margin: 0;
