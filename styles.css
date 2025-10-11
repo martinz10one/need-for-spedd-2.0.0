@@ -523,3 +523,75 @@ body {
   /* ...tus estilos existentes... */
   animation: neon-pulse 2s infinite;
 }
+/* Estilos generales para el fondo negro del juego */
+/* Estilos generales para el fondo negro del juego */
+body {
+  
+    /* Estilos base: Fondo negro, dimensiones completas */
+    /* Fondo negro sólido para el cuerpo */
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh; /* Asegura la altura completa, mejor que solo height: 100vh */
+    box-sizing: border-box;
+
+    /* 🏎️ Efecto de Desvanecimiento Radial (Viñeta Oscura) */
+    background-image: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0) 0%,   /* Centro: Totalmente transparente (mostrará el negro del body) */
+        rgba(0, 0, 0, 0) 30%,        /* Transparente hasta el 60% */
+        rgba(0, 0, 0, 0.8) 80%,      /* Empieza a ser negro opaco al 80% */
+        rgba(0, 0, 0, 1) 100%        /* Borde: Negro sólido (se fusiona con el background-color: #000000) */
+    );
+    
+    /* Nota: Si el fondo fuera una imagen, cambiarías el color final a transparente (rgba(0, 0, 0, 0)) 
+       y usarías la imagen como segundo valor en background-image. */
+}
+/* Contenedor de la caja de historia */
+.historia-contenedor {
+    position: relative; /* Esencial para posicionar el desvanecimiento */
+    width: 50%;
+    height: 100%;
+    max-height: 250px; /* Limita la altura para forzar el desvanecimiento */
+    overflow: hidden; /* Oculta el texto que exceda la altura máxima */
+    margin: 50px auto; /* Centra la caja en la pantalla */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Caja semitransparente oscura */
+    border: 1px solid #333; /* Un borde sutil */
+
+}
+
+/* Estilo del texto de la historia */
+.texto-historia p {
+    margin: 0;
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: #ffffff;
+}
+
+/* TRUCO DEL DESVANECIMIENTO: 
+   Crea una capa que se posiciona al final del contenedor 
+   y aplica un gradiente de transparente a negro.
+*/
+.historia-contenedor::after {
+    content: ""; /* Obligatorio para pseudo-elementos */
+    position: absolute;
+    bottom: 0; /* Posiciona la capa en la parte inferior */
+    left: 0;
+    width: 100%;
+    height: 80px; /* Altura de la zona de desvanecimiento */
+    
+    /* El gradiente va de transparente (rgba con alfa 0) a negro sólido */
+    background: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0) 0%, /* Totalmente transparente arriba */
+        rgba(0, 0, 0, 0.7) 40%, /* Un poco de opacidad */
+        #000000 100% /* Negro sólido abajo */
+    );
+    
+    /* Asegura que el desvanecimiento esté por encima del texto */
+    pointer-events: none; 
+}
