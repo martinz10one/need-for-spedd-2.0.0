@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>vehiculos-2</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.car-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Remove selected class from all cards
+                    cards.forEach(c => c.classList.remove('selected'));
+                    // Add selected class to clicked card
+                    this.classList.add('selected');
+                });
+            });
+        });
+    </script>
 </head>
 
 <body class="vehiculos2-bg">
@@ -24,9 +38,7 @@
                         <div>Manejo: <span>8/10</span></div>
 
                         
-                         <div class="seleccionar-container">
-                      <a href="pistas.html" class="btn-seleccionar">Seleccionar Vehículo</a>
-                      </div>
+                 
      
                     </div>
                
@@ -41,9 +53,7 @@
                         <div>Velocidad: <span>6/10</span></div>
                         <div>Aceleración: <span>7/10</span></div>
                         <div>Manejo: <span>9/10</span></div>
-                        <div class="seleccionar-container">
-                      <a href="pistas.html" class="btn-seleccionar">Seleccionar Vehículo</a>
-                      </div>
+                       
                     </div>
                
                
@@ -58,9 +68,7 @@
                         <div>Velocidad: <span>8/10</span></div>
                         <div>Aceleración: <span>9/10</span></div>
                         <div>Manejo: <span>7/10</span></div>
-                        <div class="seleccionar-container">
-                      <a href="pistas.html" class="btn-seleccionar">Seleccionar Vehículo</a>
-                      </div>
+                      
                     </div>
               
                 
@@ -75,9 +83,7 @@
                         <div>Velocidad: <span>8/10</span></div>
                         <div>Aceleración: <span>8/10</span></div>
                         <div>Manejo: <span>9/10</span></div>
-                        <div class="seleccionar-container">
-                      <a href="pistas.html" class="btn-seleccionar">Seleccionar Vehículo</a>
-                      </div>
+                        
                     </div>
                
                 
@@ -92,9 +98,7 @@
                         <div>Velocidad: <span>10/10</span></div>
                         <div>Aceleración: <span>9/10</span></div>
                         <div>Manejo: <span>8/10</span></div>
-                        <div class="seleccionar-container">
-                      <a href="pistas.html" class="btn-seleccionar">Seleccionar Vehículo</a>
-                      </div>
+                     
                     </div>
                
                 
@@ -110,15 +114,19 @@
                         <div>Aceleración: <span>8/10</span></div>
                         <div>Manejo: <span>7/10</span></div>
                         <div class="seleccionar-container">
-                      <a href="pistas.html" class="btn-seleccionar">Seleccionar Vehículo</a>
-                      </div>
+                    
                     </div>
                 
                
             </div>
+
+           
         </div>
     </div> <!-- fin de .car-grid -->
 
+    <div class="seleccionar-container">
+        <a href="pistas.html" class="btn-seleccionar">Seleccionar Vehículo</a>
+    </div>
    
 </body>
 

@@ -167,10 +167,10 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    width: 80%;
+    width: 70%;
     height: 85%;
     padding: 10px;
-      padding-top: 80px;
+    padding-top: 20px;
   
 
     position: absolute;
@@ -187,18 +187,37 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.3s ease;
     backdrop-filter: blur(4px);
+    position: relative;
+    padding-bottom: 60px;
+    cursor: pointer;
 }
 
-.car-card:hover {
+.car-card:hover, .car-card.selected {
     transform: scale(1.05);
     box-shadow: 0 0 48px 16px #ff3860, 0 0 16px 4px #00fff7;
     border-color: #ff3860;
 }
 
+.car-card.selected {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 48px 16px #ff3860, 0 0 16px 4px #00fff7;
+    }
+    50% {
+        box-shadow: 0 0 64px 20px #ff3860, 0 0 24px 8px #00fff7;
+    }
+    100% {
+        box-shadow: 0 0 48px 16px #ff3860, 0 0 16px 4px #00fff7;
+    }
+}
+
 .car-img {
-    width: 250px;
+    width: 150px;
     height: 120px;
     object-fit: cover;
     border-bottom: 2px solid #00fff7;
@@ -207,7 +226,7 @@ body {
 .car-title {
     color: #fff;
     font-size: 1.3rem;
-    margin: 18px 0 10px 0;
+    
     text-shadow: 0 0 8px #00fff7, 0 0 4px #a259ff;
     text-align: center;
 }
@@ -268,19 +287,20 @@ body {
 
 .btn-seleccionar {
   background: linear-gradient(90deg, var(--color-neon-cyan), var(--color-neon-purple));
-   color: #fff;
-   align-items: center;
-   justify-content: center;
+  color: #fff;
   border: none;
   border-radius: 20px;
   font-family: 'Orbitron', Arial, sans-serif;
   font-size: 20px;
-  height: 30px;
-  top: 50px;
+  
+  
+ 
   text-decoration: none;
   display: inline-block;
   transition: transform 0.2s, box-shadow 0.2s;
   box-shadow: 0 0 12px var(--color-neon-cyan), 0 0 24px var(--color-neon-purple);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .btn-seleccionar:hover {
@@ -289,12 +309,11 @@ body {
 }
 
 .seleccionar-container {
-  width: 100%;
-  justify-content: center;
-  position: absolute;
-  bottom: 40px;
-  
+  position: fixed;
+  right: 40px;
+  bottom: 10px;
   z-index: 20;
+  transform: translateY(50%);
 }
 
 /*pistas*/
@@ -335,9 +354,6 @@ body {
     display: block;
 }
 
-.info {
-    padding: 15px;
-}
 
 .info h2 {
     margin: 0 0 10px;
@@ -379,15 +395,37 @@ body {
 .info {
     position: absolute;
     top: 0;
-    left: 100%; /* Posiciona la descripción fuera del contenedor, a la derecha */
+    left: 100%;
     width: 100%;
     height: 100%;
     padding: 20px;
     box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+    background-color: rgba(0, 0, 0, 0.9);
     color: white;
-    /* Efecto de transición para una animación suave */
-    transition: transform 0.5s ease-in-out; 
+    transition: transform 0.5s ease-in-out;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #ff3860 rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para la barra de desplazamiento en navegadores webkit (Chrome, Safari, etc.) */
+.info::-webkit-scrollbar {
+    width: 8px;
+}
+
+.info::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.info::-webkit-scrollbar-thumb {
+    background: #ff3860;
+    border-radius: 4px;
+    box-shadow: 0 0 8px #00fff7;
+}
+
+.info::-webkit-scrollbar-thumb:hover {
+    background: #ff1744;
 }
 
 /* Regla para el efecto hover */
